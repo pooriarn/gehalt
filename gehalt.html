@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brutto to Netto Calculator</title>
+    <script>
+        function calculateNetto() {
+            let brutto = parseFloat(document.getElementById('brutto').value);
+            
+            // Extracted from the dataset in the image
+            let lohnsteuer = brutto * 0.261; // Example 26.1% for Lohnsteuer
+            let solidaritätszuschlag = 100; // Fixed Solidaritätszuschlag
+            let sozialversicherung = brutto * 0.013; // Example 1.3% for Sozialversicherung
+            let arbeitslosenversicherung = brutto * 0.026; // Example 2.6% for Arbeitslosenversicherung
+
+            // Calculate other contributions
+            let kv_freiw = 377.77;
+            let kv_freiw_vers = 408.83;
+            let pflegeversicherung = 87.97;
+            let pv_kinderlosenzuschlag = 31.05;
+            let rentenversicherung = 702.15;
+            let berufsständische = 7.55;
+            let krankenversicherung_zusatz = 31.05;
+
+            // Calculate total deductions
+            let totalDeductions = lohnsteuer + solidaritätszuschlag + sozialversicherung + arbeitslosenversicherung +
+                                  kv_freiw + kv_freiw_vers + pflegeversicherung + pv_kinderlosenzuschlag +
+                                  rentenversicherung + berufsständische + krankenversicherung_zusatz;
+
+            // Netto calculation
+            let netto = brutto - totalDeductions;
+
+            // Display the result
+            document.getElementById('netto').innerText = `Netto: €${netto.toFixed(2)}`;
+        }
+    </script>
+</head>
+<body>
+    <h1>Brutto to Netto Calculator</h1>
+    <label for="brutto">Brutto: €</label>
+    <input type="number" id="brutto" step="0.01">
+    <button onclick="calculateNetto()">Calculate</button>
+    <p id="netto"></p>
+</body>
+</html>
