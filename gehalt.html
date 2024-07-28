@@ -9,25 +9,23 @@
             // Get the Brutto input value
             let brutto = parseFloat(document.getElementById('brutto').value);
 
-            // Deduction values from the payslip
-            let lohnsteuer = 2351.25;
-            let solidaritätszuschlag = 100;
-            let sozialversicherung = 98.15;
+            // Deductions from the payslip
+            let lohnsteuer = 1940.91;
+            let solidaritätszuschlag = 51.17;
             let arbeitslosenversicherung = 98.15;
 
             // Employer contributions from the payslip
             let kv_freiw = 377.77;
-            let kv_freiw_vers = 408.83;
+            let kv_freiw_vers = 424.36;
             let pflegeversicherung = 87.97;
             let pv_kinderlosenzuschlag = 31.05;
             let rentenversicherung = 702.15;
-            let berufsständische = 7.55;
-            let krankenversicherung_zusatz = 31.05;
+            let berufsständische = 46.57;
 
-            // Total Deductions Calculation
-            let totalDeductions = lohnsteuer + solidaritätszuschlag + sozialversicherung + arbeitslosenversicherung +
+            // Calculate total deductions
+            let totalDeductions = lohnsteuer + solidaritätszuschlag + arbeitslosenversicherung +
                                   kv_freiw + kv_freiw_vers + pflegeversicherung + pv_kinderlosenzuschlag +
-                                  rentenversicherung + berufsständische + krankenversicherung_zusatz;
+                                  rentenversicherung + berufsständische;
 
             // Calculate Netto Salary
             let netto = brutto - totalDeductions;
@@ -40,7 +38,7 @@
 <body>
     <h1>Brutto to Netto Calculator</h1>
     <label for="brutto">Brutto: €</label>
-    <input type="number" id="brutto" step="0.01" value="9121.03">
+    <input type="number" id="brutto" step="0.01" value="8298.39">
     <button onclick="calculateNetto()">Calculate</button>
     <p id="netto"></p>
 </body>
