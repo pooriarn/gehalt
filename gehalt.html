@@ -9,22 +9,22 @@
             // Get the Brutto input value
             let brutto = parseFloat(document.getElementById('brutto').value);
 
-            // Specific deductions and contributions from your payslip
-            let lohnsteuer = 2351.25; // Example fixed value from your payslip
-            let solidaritätszuschlag = 100; // Example fixed value from your payslip
-            let sozialversicherung = 98.15; // Example fixed value from your payslip
-            let arbeitslosenversicherung = 98.15; // Example fixed value from your payslip
+            // Deduction values from the payslip
+            let lohnsteuer = 2351.25;
+            let solidaritätszuschlag = 100;
+            let sozialversicherung = 98.15;
+            let arbeitslosenversicherung = 98.15;
 
-            // Employer Contributions
-            let kv_freiw = 377.77; // Example fixed value from your payslip
-            let kv_freiw_vers = 408.83; // Example fixed value from your payslip
-            let pflegeversicherung = 87.97; // Example fixed value from your payslip
-            let pv_kinderlosenzuschlag = 31.05; // Example fixed value from your payslip
-            let rentenversicherung = 702.15; // Example fixed value from your payslip
-            let berufsständische = 7.55; // Example fixed value from your payslip
-            let krankenversicherung_zusatz = 31.05; // Example fixed value from your payslip
+            // Employer contributions from the payslip
+            let kv_freiw = 377.77;
+            let kv_freiw_vers = 408.83;
+            let pflegeversicherung = 87.97;
+            let pv_kinderlosenzuschlag = 31.05;
+            let rentenversicherung = 702.15;
+            let berufsständische = 7.55;
+            let krankenversicherung_zusatz = 31.05;
 
-            // Calculate total deductions
+            // Total Deductions Calculation
             let totalDeductions = lohnsteuer + solidaritätszuschlag + sozialversicherung + arbeitslosenversicherung +
                                   kv_freiw + kv_freiw_vers + pflegeversicherung + pv_kinderlosenzuschlag +
                                   rentenversicherung + berufsständische + krankenversicherung_zusatz;
@@ -40,7 +40,7 @@
 <body>
     <h1>Brutto to Netto Calculator</h1>
     <label for="brutto">Brutto: €</label>
-    <input type="number" id="brutto" step="0.01">
+    <input type="number" id="brutto" step="0.01" value="9121.03">
     <button onclick="calculateNetto()">Calculate</button>
     <p id="netto"></p>
 </body>
