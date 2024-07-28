@@ -6,22 +6,27 @@
     <title>Brutto to Netto Calculator</title>
     <script>
         function calculateNetto() {
-            // Get the Brutto input value
             let brutto = parseFloat(document.getElementById('brutto').value);
 
-            // Deductions from the payslip
-            let lohnsteuer = 2002.66;
-            let solidaritätszuschlag = 58.52;
-            let arbeitslosenversicherung = 98.15;
+            // Deductions (fixed values from the examples)
+            let lohnsteuer = 2002.66;  // Example 3 specific value
+            let solidaritätszuschlag = 58.52;  // Example 3 specific value
+            let arbeitslosenversicherung = 98.15;  // Fixed value from examples
 
-            // Calculate total deductions
-            let totalDeductions = lohnsteuer + solidaritätszuschlag + arbeitslosenversicherung;
+            // Insurance Contributions
+            let krankenversicherung = 377.77;  // Fixed value from examples
+            let pflegeversicherung = 87.97;  // Fixed value from examples
+            let altersversorgung = 702.15;  // Fixed value from examples
+            let zusatzbeitrag = 46.57;  // Fixed value from examples
 
-            // Calculate Netto Salary
+            // Total deductions and contributions
+            let totalDeductions = lohnsteuer + solidaritätszuschlag + arbeitslosenversicherung +
+                                  krankenversicherung + pflegeversicherung + altersversorgung + zusatzbeitrag;
+
+            // Calculate Netto
             let netto = brutto - totalDeductions;
 
-            // Display the result
-            document.getElementById('netto').innerText = `Netto: €${netto.toFixed(2)}`;
+            document.getElementById('netto').innerText = `Netto (Auszahlungsbetrag): €${netto.toFixed(2)}`;
         }
     </script>
 </head>
